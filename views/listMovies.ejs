@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('navbar'); -%>
+
+        <h1>List Movies</h1>
+
+        <div class="container-fluid">
+            <div class="row">
+                <% results.forEach(function(movie){ %>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-1 ">
+                                    <%- movie.title %>
+                                </h5>
+
+                                <p class="card-text">
+                                    <%- movie.release_date %>
+                                        <p>
+                                            <p class="card-text">
+                                                <%- movie.gender %>
+                                                    <p>
+                                                        <p class="card-text">
+                                                            <%- movie.sinopsis %>
+                                                                <p>
+                                                                    <a href="/movies/viewMovie/<%- movie.id_movie %>" class="btn btn-primary">Go to Movie</a>
+                                                                    <a href="/movies/deleteMovie/<%- movie.id_movie %>" class="btn btn-danger">Delete MoVie</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+
+</body>
+
+</html>
